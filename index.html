@@ -190,6 +190,31 @@
             width: 20px;
         }
 
+        /* LinkedIn Icon in Sidebar */
+        .linkedin-sidebar {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            background: rgba(100, 255, 218, 0.05);
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        .linkedin-sidebar:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateX(8px);
+        }
+
+        .linkedin-sidebar i {
+            color: #0077b5;
+            margin-right: 12px;
+            font-size: 20px;
+        }
+
         /* Main Content */
         .main-content {
             flex: 1;
@@ -473,7 +498,7 @@
             font-size: 14px;
         }
 
-        /* Projects Section - UPDATED for larger images */
+        /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -563,7 +588,7 @@
             transform: translateY(-2px);
         }
 
-        /* Certificates Section - UPDATED for larger images (like projects) */
+        /* Certificates Section */
         .certificates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -631,7 +656,7 @@
             margin-bottom: 12px;
         }
 
-        /* Achievements Section - UPDATED for larger images (like projects) */
+        /* Achievements Section */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -698,6 +723,133 @@
             font-size: 22px;
             color: var(--light-gray);
             margin-bottom: 12px;
+        }
+
+        /* ===== UPDATED: Carousel/Slider Section - Smaller & Faster ===== */
+        .carousel-section {
+            padding: 80px 80px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+        }
+
+        .carousel-container {
+            max-width: 1000px; /* Smaller width */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            background: var(--primary-dark);
+            height: 400px; /* Reduced height */
+        }
+
+        .carousel-slider {
+            display: flex;
+            transition: transform 0.4s ease-in-out; /* Faster transition */
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: filter 0.3s ease;
+        }
+
+        .carousel-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 25, 47, 0.95));
+            color: white;
+            padding: 30px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease; /* Faster transition */
+        }
+
+        .carousel-slide.active .carousel-content {
+            transform: translateY(0);
+        }
+
+        .carousel-content h3 {
+            font-size: 24px; /* Slightly smaller */
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .carousel-content p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+            max-width: 600px;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .carousel-dot {
+            width: 10px; /* Smaller dots */
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.2s ease; /* Faster transition */
+        }
+
+        .carousel-dot.active {
+            background: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        .carousel-prev,
+        .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(100, 255, 218, 0.1);
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            width: 45px; /* Smaller buttons */
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px; /* Smaller icon */
+            transition: all 0.2s ease; /* Faster transition */
+            z-index: 100;
+        }
+
+        .carousel-prev:hover,
+        .carousel-next:hover {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 15px;
+        }
+
+        .carousel-next {
+            right: 15px;
         }
 
         /* Contact Section */
@@ -828,6 +980,12 @@
             border-color: var(--secondary);
         }
 
+        /* LinkedIn specific styling in footer */
+        .social-links a.linkedin:hover {
+            background-color: #0077b5;
+            color: white;
+        }
+
         .copyright {
             padding-top: 30px;
             border-top: 1px solid rgba(100, 255, 218, 0.1);
@@ -835,7 +993,7 @@
             opacity: 0.8;
         }
 
-        /* Modal Styles */
+        /* ===== Enhanced Modal Styles ===== */
         .modal {
             display: none;
             position: fixed;
@@ -873,7 +1031,7 @@
 
         .modal-img-container {
             width: 100%;
-            height: 60vh;
+            height: 50vh;
             overflow: hidden;
             background-color: var(--primary);
         }
@@ -887,12 +1045,88 @@
         .modal-info {
             padding: 30px;
             color: var(--text-light);
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        /* New Modal Components */
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .modal-title {
             font-size: 28px;
             color: var(--light-gray);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
+        .image-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .image-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+
+        .modal-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            padding-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .modal-tab {
+            padding: 8px 20px;
+            background: transparent;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            color: var(--text-light);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .modal-tab.active {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            border-color: var(--secondary);
+        }
+
+        .modal-tab:hover:not(.active) {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .modal-tab-content {
+            display: none;
+        }
+
+        .modal-tab-content.active {
+            display: block;
+            animation: fadeInContent 0.3s ease;
+        }
+
+        @keyframes fadeInContent {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-description {
@@ -915,6 +1149,114 @@
             border-radius: 20px;
             font-size: 14px;
             font-weight: 500;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .modal-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .modal-link:hover {
+            background: var(--secondary);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .modal-link i {
+            font-size: 16px;
+        }
+
+        .modal-details {
+            background: rgba(100, 255, 218, 0.05);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .modal-details h4 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .modal-details ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .modal-details li {
+            margin-bottom: 12px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .modal-details li:before {
+            content: '▸';
+            color: var(--secondary);
+            position: absolute;
+            left: -20px;
+            font-weight: bold;
+        }
+
+        /* Modal Image Gallery */
+        .modal-gallery {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .modal-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .modal-gallery::-webkit-scrollbar-track {
+            background: rgba(100, 255, 218, 0.05);
+            border-radius: 4px;
+        }
+
+        .modal-gallery::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        .modal-gallery-img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 3px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .modal-gallery-img:hover,
+        .modal-gallery-img.active {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .close-modal {
@@ -944,6 +1286,26 @@
             background-color: rgba(0, 0, 0, 0.8);
         }
 
+        /* Click indicator */
+        .click-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+
+        .click-indicator i {
+            font-size: 10px;
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 1200px) {
             .sidebar {
@@ -969,6 +1331,14 @@
             .modal-content {
                 width: 95%;
                 margin: 2% auto;
+            }
+            
+            .carousel-section {
+                padding: 80px 60px;
+            }
+            
+            .carousel-container {
+                height: 350px;
             }
         }
 
@@ -1033,6 +1403,31 @@
             .modal-img-container {
                 height: 40vh;
             }
+            
+            .modal-info {
+                max-height: 50vh;
+            }
+            
+            .carousel-section {
+                padding: 70px 40px;
+            }
+            
+            .carousel-container {
+                height: 300px;
+                max-width: 800px;
+            }
+            
+            .carousel-content {
+                padding: 20px;
+            }
+            
+            .carousel-content h3 {
+                font-size: 20px;
+            }
+            
+            .carousel-content p {
+                font-size: 14px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1084,6 +1479,57 @@
             
             .modal-info {
                 padding: 20px;
+                max-height: 60vh;
+            }
+            
+            .modal-title {
+                font-size: 24px;
+            }
+            
+            .modal-tabs {
+                flex-direction: column;
+            }
+            
+            .modal-tab {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .modal-links {
+                flex-direction: column;
+            }
+            
+            .modal-link {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .carousel-section {
+                padding: 60px 30px;
+            }
+            
+            .carousel-container {
+                height: 250px;
+            }
+            
+            .carousel-content h3 {
+                font-size: 18px;
+            }
+            
+            .carousel-content p {
+                font-size: 13px;
+            }
+            
+            .carousel-prev,
+            .carousel-next {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            .carousel-dot {
+                width: 8px;
+                height: 8px;
             }
         }
 
@@ -1114,6 +1560,37 @@
             
             .modal-img-container {
                 height: 35vh;
+            }
+            
+            .modal-info {
+                max-height: 65vh;
+            }
+            
+            .carousel-section {
+                padding: 50px 20px;
+            }
+            
+            .carousel-container {
+                height: 200px;
+            }
+            
+            .carousel-content {
+                padding: 15px;
+            }
+            
+            .carousel-content h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .carousel-content p {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .carousel-content .btn {
+                padding: 8px 15px;
+                font-size: 14px;
             }
         }
 
@@ -1150,26 +1627,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--secondary-light);
         }
-
-        /* Click indicator */
-        .click-indicator {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: var(--secondary);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            z-index: 2;
-        }
-
-        .click-indicator i {
-            font-size: 10px;
-        }
     </style>
 </head>
 <body>
@@ -1195,6 +1652,7 @@
                 <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                 <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
                 <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li><a href="#showcase"><i class="fas fa-images"></i> Showcase</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
             
@@ -1202,6 +1660,12 @@
                 <p><i class="fas fa-envelope"></i> sifatmahmud437@gmail.com</p>
                 <p><i class="fas fa-phone"></i> +880 1778871115</p>
                 <p><i class="fas fa-globe"></i> www.sifat-portfolio.com</p>
+                
+                <!-- LinkedIn Profile in Sidebar -->
+                <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" class="linkedin-sidebar">
+                    <i class="fab fa-linkedin"></i>
+                    <span>Connect on LinkedIn</span>
+                </a>
             </div>
         </nav>
         
@@ -1311,20 +1775,16 @@
                 </div>
             </section>
             
-            <!-- Projects Section - WITH LARGER IMAGES -->
+            <!-- Projects Section -->
             <section id="projects" class="animate-section">
                 <h2 class="section-title">Projects</h2>
                 <div class="projects-grid">
                     <!-- Project 1: Progress Nest -->
                     <div class="project-card">
                         <div class="project-img-container" onclick="openModal('progress-nest')">
-                            <!-- ===== PROJECT IMAGE 1 ===== -->
-                            <!-- <img src="progress-nest.jpg" alt="Progress Nest" class="project-img"> -->
-                            <div class="project-img-placeholder">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Progress Nest" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1344,7 +1804,7 @@
                         <div class="project-img-container" onclick="openModal('lumira-medica')">
                             <img src="lumira.jpeg" alt="Lumira Medica" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1362,12 +1822,9 @@
                     <!-- Project 3: Personal Portfolio Website -->
                     <div class="project-card">
                         <div class="project-img-container" onclick="openModal('portfolio')">
-                            <!-- <img src="portfolio.jpg" alt="Personal Portfolio" class="project-img"> -->
-                            <div class="project-img-placeholder">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Personal Portfolio" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1387,7 +1844,7 @@
                         <div class="project-img-container" onclick="openModal('roboscout')">
                             <img src="robotcar.jpeg" alt="RoboScout" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1408,7 +1865,7 @@
                         <div class="project-img-container" onclick="openModal('wireless-power')">
                             <img src="power.jpeg" alt="Wireless Power Transmission" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1428,7 +1885,7 @@
                         <div class="project-img-container" onclick="openModal('smart-home')">
                             <img src="safety.jpeg" alt="Smart Home Safety System" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1449,7 +1906,7 @@
                         <div class="project-img-container" onclick="openModal('network-design')">
                             <img src="packet.jpeg" alt="Network Design" class="project-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="project-content">
@@ -1468,7 +1925,7 @@
                 </div>
             </section>
             
-            <!-- Certificates & Badges Section - WITH LARGER IMAGES -->
+            <!-- Certificates Section -->
             <section id="certificates" class="animate-section">
                 <h2 class="section-title">Certificates & Badges</h2>
                 <div class="certificates-grid">
@@ -1477,7 +1934,7 @@
                         <div class="certificate-img-container" onclick="openModal('tryhackme-cert')">
                             <img src="tryhackme.jpg" alt="TryHackMe Certificate" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1491,7 +1948,7 @@
                         <div class="certificate-img-container" onclick="openModal('matlab-cert')">
                             <img src="matlab.jpg" alt="MATLAB Certificate" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1505,7 +1962,7 @@
                         <div class="certificate-img-container" onclick="openModal('ibm-cert')">
                             <img src="data.jfif" alt="IBM Certificate" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1519,7 +1976,7 @@
                         <div class="certificate-img-container" onclick="openModal('matlab-onramp')">
                             <img src="onramp.jpg" alt="MATLAB Onramp" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1533,7 +1990,7 @@
                         <div class="certificate-img-container" onclick="openModal('alison-cert')">
                             <img src="alison.jfif" alt="Alison Certificate" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1547,7 +2004,7 @@
                         <div class="certificate-img-container" onclick="openModal('cisco-security')">
                             <img src="cyber.jfif" alt="Cisco Cybersecurity Badge" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1561,7 +2018,7 @@
                         <div class="certificate-img-container" onclick="openModal('cisco-networking')">
                             <img src="network.png" alt="Cisco Networking Badge" class="certificate-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="certificate-content">
@@ -1572,7 +2029,7 @@
                 </div>
             </section>
             
-            <!-- Achievements Section - WITH LARGER IMAGES -->
+            <!-- Achievements Section -->
             <section id="achievements" class="animate-section">
                 <h2 class="section-title">Honors & Awards</h2>
                 <div class="achievements-grid">
@@ -1581,7 +2038,7 @@
                         <div class="achievement-img-container" onclick="openModal('project-show-award')">
                             <img src="achivement.jpeg" alt="Project Show Award" class="achievement-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="achievement-content">
@@ -1596,7 +2053,7 @@
                         <div class="achievement-img-container" onclick="openModal('cisco-security-badge')">
                             <img src="cyber.jfif" alt="Cisco Cybersecurity Badge" class="achievement-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="achievement-content">
@@ -1610,13 +2067,114 @@
                         <div class="achievement-img-container" onclick="openModal('cisco-networking-badge')">
                             <img src="network.png" alt="Cisco Networking Badge" class="achievement-img">
                             <div class="click-indicator">
-                                <i class="fas fa-search-plus"></i> Click to view
+                                <i class="fas fa-search-plus"></i> Click for details
                             </div>
                         </div>
                         <div class="achievement-content">
                             <h3 class="achievement-title">Cisco Networking Basics Badge</h3>
                             <p>Earned Cisco Networking Basics badge covering networking fundamentals, IP addressing, and basic routing concepts.</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ===== UPDATED: Carousel/Slider Section - Smaller & Faster ===== -->
+            <section id="showcase" class="carousel-section animate-section">
+                <h2 class="section-title">Project Showcase</h2>
+                <div class="carousel-container">
+                    <div class="carousel-slider">
+                        <!-- Slide 1 - RoboScout -->
+                        <div class="carousel-slide active">
+                            <img src="robotcar.jpeg" alt="RoboScout Project" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>RoboScout - Autonomous Surveillance Car</h3>
+                                <p>AI-powered surveillance vehicle with real-time object detection and autonomous navigation capabilities.</p>
+                                <a href="#projects" class="btn btn-secondary">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 - Smart Home -->
+                        <div class="carousel-slide">
+                            <img src="safety.jpeg" alt="Smart Home Safety System" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>Smart Home Safety System</h3>
+                                <p>IoT-based home security system with multiple sensors and real-time monitoring capabilities.</p>
+                                <a href="#projects" class="btn btn-secondary">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 - Network Design -->
+                        <div class="carousel-slide">
+                            <img src="packet.jpeg" alt="Network Design" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>Enterprise Network Design</h3>
+                                <p>Complete network infrastructure design and implementation for small organizations.</p>
+                                <a href="#projects" class="btn btn-secondary">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 - Wireless Power -->
+                        <div class="carousel-slide">
+                            <img src="power.jpeg" alt="Wireless Power Transmission" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>Wireless Power Transmission</h3>
+                                <p>Innovative coil-based wireless power transmission system for low-power applications.</p>
+                                <a href="#projects" class="btn btn-secondary">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5 - TryHackMe Certificate -->
+                        <div class="carousel-slide">
+                            <img src="tryhackme.jpg" alt="TryHackMe Certificate" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>Cybersecurity Certification</h3>
+                                <p>Completed TryHackMe's Advent of Cyber 2025 challenge with comprehensive cybersecurity training.</p>
+                                <a href="#certificates" class="btn btn-secondary">View Certificate</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 6 - Achievement Award -->
+                        <div class="carousel-slide">
+                            <img src="achivement.jpeg" alt="Project Show Award" class="carousel-img">
+                            <div class="carousel-content">
+                                <h3>3rd Position - Project Show</h3>
+                                <p>Awarded for innovative Safety Home and Security System in Digital Logic Design Course.</p>
+                                <a href="#achievements" class="btn btn-secondary">View Achievement</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <div class="carousel-nav">
+                        <div class="carousel-dot active"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                        <div class="carousel-dot"></div>
+                    </div>
+                </div>
+                
+                <!-- ===== TAGS SECTION - Add Your Images Here ===== -->
+                <div style="margin-top: 40px; text-align: center;">
+                    <h3 style="color: var(--light-gray); margin-bottom: 20px;">How to Add More Images</h3>
+                    <div style="background: var(--primary-light); padding: 20px; border-radius: var(--border-radius); border: 1px solid rgba(100, 255, 218, 0.1);">
+                        <p style="color: var(--secondary); margin-bottom: 15px; font-size: 14px;">
+                            <i class="fas fa-code"></i> Add more images by editing the JavaScript carousel data
+                        </p>
+                        <pre style="background: var(--primary-dark); padding: 15px; border-radius: var(--border-radius); color: var(--text-light); text-align: left; overflow-x: auto; font-size: 12px; line-height: 1.4;">
+// In the JavaScript, add more slides to the carouselSlides array:
+const carouselSlides = [
+    {
+        image: 'your-image.jpg',
+        title: 'Your Title',
+        description: 'Your description',
+        link: '#section'
+    },
+    // Add more slides here...
+];</pre>
                     </div>
                 </div>
             </section>
@@ -1656,6 +2214,19 @@
                             <div>
                                 <h4>Location</h4>
                                 <p>Chittagong, Bangladesh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon" style="background: rgba(0, 119, 181, 0.1); color: #0077b5;">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>Connect with me on LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" style="color: var(--secondary); text-decoration: none;">
+                                    View Profile <i class="fas fa-external-link-alt"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -1698,21 +2269,34 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <!-- LinkedIn with specific styling -->
+                        <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" class="linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/yourusername" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/yourusername" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/yourusername" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="copyright">
-                    <p>&copy; 2025 Sifat Mahmud. All Rights Reserved.</p>
+                    <p>&copy; 2025 Sifat Mahmud. All Rights Reserved. | 
+                        <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" style="color: var(--secondary); text-decoration: none;">
+                            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                        </a>
+                    </p>
                 </div>
             </footer>
         </main>
     </div>
 
-    <!-- Modal for Image Viewing -->
+    <!-- ===== Enhanced Modal for Image Viewing ===== -->
     <div id="imageModal" class="modal">
         <button class="close-modal" onclick="closeModal()">&times;</button>
         <div class="modal-content">
@@ -1720,166 +2304,820 @@
                 <img id="modalImage" src="" alt="Modal Image" class="modal-img">
             </div>
             <div class="modal-info">
-                <h2 id="modalTitle" class="modal-title"></h2>
-                <p id="modalDescription" class="modal-description"></p>
-                <div id="modalTech" class="modal-tech"></div>
+                <div class="modal-header">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <div class="image-tags" id="modalTags">
+                        <!-- Tags will be added here -->
+                    </div>
+                </div>
+                
+                <!-- Modal Tabs -->
+                <div class="modal-tabs">
+                    <button class="modal-tab active" onclick="switchTab('overview')">Overview</button>
+                    <button class="modal-tab" onclick="switchTab('details')">Details</button>
+                    <button class="modal-tab" onclick="switchTab('resources')">Resources</button>
+                </div>
+                
+                <!-- Tab Contents -->
+                <div id="overviewTab" class="modal-tab-content active">
+                    <p id="modalDescription" class="modal-description"></p>
+                    <div id="modalTech" class="modal-tech"></div>
+                </div>
+                
+                <div id="detailsTab" class="modal-tab-content">
+                    <div class="modal-details">
+                        <h4>Key Features</h4>
+                        <ul id="modalFeatures">
+                            <!-- Features will be added here -->
+                        </ul>
+                    </div>
+                    <div class="modal-details">
+                        <h4>Technologies Used</h4>
+                        <ul id="modalTechnologies">
+                            <!-- Technologies will be added here -->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="resourcesTab" class="modal-tab-content">
+                    <div class="modal-details">
+                        <h4>Project Resources</h4>
+                        <div class="modal-links" id="modalLinks">
+                            <!-- Links will be added here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Image Gallery -->
+                    <div class="modal-details" id="galleryContainer">
+                        <h4>Gallery</h4>
+                        <div class="modal-gallery" id="modalGallery">
+                            <!-- Additional images will be added here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Modal Data (information for each image)
+        // ===== COMPLETE Enhanced Modal Data =====
         const modalData = {
             // Profile
             'profile': {
                 title: 'Sifat Mahmud',
-                description: 'Electronics & Telecommunication Engineering student at Chittagong University of Engineering and Technology. Passionate about embedded systems, web development, and machine learning.',
-                image: 'profile.jpeg'
+                description: 'Electronics & Telecommunication Engineering student at Chittagong University of Engineering and Technology. Passionate about embedded systems, web development, and machine learning. Seeking opportunities to apply technical skills in innovative projects.',
+                tags: ['Engineer', 'Developer', 'Researcher', 'Innovator'],
+                features: [
+                    'Strong foundation in Electronics and Telecommunication Engineering',
+                    'Experience in embedded systems and IoT development',
+                    'Web development expertise with modern frameworks',
+                    'Machine Learning and AI applications in real-world projects',
+                    'Networking and cybersecurity knowledge'
+                ],
+                technologies: ['Python', 'C/C++', 'Arduino', 'MATLAB', 'Django', 'HTML/CSS', 'JavaScript', 'SQL'],
+                images: ['profile.jpeg', 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'],
+                links: [
+                    { label: 'Download CV', icon: 'fas fa-download', url: 'cv_sifat.pdf' },
+                    { label: 'LinkedIn Profile', icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/sifat-mahmud-12345678/' },
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername' },
+                    { label: 'Academic Transcript', icon: 'fas fa-graduation-cap', url: 'transcript.pdf' }
+                ]
             },
             
-            // Projects
+            // Projects - Progress Nest
             'progress-nest': {
-                title: 'Progress Nest - Tech Learning & Sharing Website',
-                description: 'Tech Learning & Sharing Website with content management and user data storage using SQLite. Designed and developed a technology-focused learning and sharing platform.',
-                tech: ['HTML', 'CSS', 'SQLite', 'Backend Integration'],
-                image: null // Placeholder
+                title: 'Progress Nest - Tech Learning Platform',
+                description: 'A comprehensive technology learning and sharing platform with content management system and user data storage using SQLite. Designed for tech enthusiasts to share knowledge, tutorials, and projects.',
+                tags: ['Web Development', 'Learning Platform', 'Database'],
+                features: [
+                    'User authentication and profile management',
+                    'Content creation and management system',
+                    'SQLite database for data storage',
+                    'Responsive design for all devices',
+                    'Search and filter functionality',
+                    'User interaction features (likes, comments)'
+                ],
+                technologies: ['HTML5', 'CSS3', 'JavaScript', 'SQLite', 'Python', 'Flask', 'Responsive Design'],
+                images: [
+                    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/progress-nest' },
+                    { label: 'Live Demo', icon: 'fas fa-external-link-alt', url: 'https://progress-nest.demo.com' },
+                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'progress_nest_docs.pdf' },
+                    { label: 'Database Schema', icon: 'fas fa-database', url: 'progress_nest_schema.pdf' }
+                ]
             },
+            
+            // Projects - Lumira Medica
             'lumira-medica': {
                 title: 'Lumira Medica - Online Medicine Ordering System',
-                description: 'Online Medicine Ordering System with complete database for managing medicines and customer orders. Collaborated with a newly established online medicine entrepreneur.',
-                tech: ['HTML', 'CSS', 'SQLite', 'Database Design'],
-                image: 'lumira.jpeg'
+                description: 'Complete online pharmacy platform developed for a new medicine entrepreneur. Features medicine catalog, shopping cart, order management, and customer database.',
+                tags: ['E-commerce', 'Healthcare', 'Database', 'Web App'],
+                features: [
+                    'Medicine catalog with search and filter functionality',
+                    'Shopping cart and secure checkout system',
+                    'Order tracking and management dashboard',
+                    'Customer database with purchase history',
+                    'Admin panel for inventory management',
+                    'Prescription upload and verification system',
+                    'Delivery tracking integration'
+                ],
+                technologies: ['HTML', 'CSS', 'JavaScript', 'SQLite', 'PHP', 'Bootstrap', 'jQuery', 'REST API'],
+                images: [
+                    'lumira.jpeg',
+                    'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/lumira-medica' },
+                    { label: 'Project Report', icon: 'fas fa-file-pdf', url: 'lumira_medica_report.pdf' },
+                    { label: 'Database Design', icon: 'fas fa-project-diagram', url: 'lumira_database.pdf' },
+                    { label: 'User Manual', icon: 'fas fa-book', url: 'lumira_user_manual.pdf' }
+                ]
             },
+            
+            // Projects - Portfolio
             'portfolio': {
                 title: 'Personal Portfolio Website',
-                description: 'Designed and developed a responsive personal portfolio to showcase projects, skills, and contact information. Focused on clean UI and professional presentation.',
-                tech: ['HTML', 'CSS', 'Responsive Design', 'UI/UX'],
-                image: null // Placeholder
+                description: 'Professional portfolio website showcasing projects, skills, education, and contact information. Built with modern web technologies and responsive design principles.',
+                tags: ['Portfolio', 'Web Design', 'Responsive', 'UI/UX'],
+                features: [
+                    'Fully responsive design for all devices',
+                    'Interactive navigation with smooth scrolling',
+                    'Project showcase with detailed modal views',
+                    'Contact form with client-side validation',
+                    'Skills visualization with animated progress bars',
+                    'Performance optimized with lazy loading',
+                    'SEO optimized with meta tags'
+                ],
+                technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'CSS Grid', 'Flexbox', 'Google Fonts', 'Font Awesome'],
+                images: [
+                    'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'View Source Code', icon: 'fab fa-github', url: 'https://github.com/yourusername/portfolio' },
+                    { label: 'Design Mockups', icon: 'fas fa-palette', url: 'portfolio_designs.pdf' },
+                    { label: 'Performance Report', icon: 'fas fa-chart-line', url: 'portfolio_performance.pdf' }
+                ]
             },
+            
+            // Projects - RoboScout
             'roboscout': {
                 title: 'RoboScout - Autonomous Surveillance & Detection Car',
-                description: 'Autonomous Surveillance Car with person/object detection using computer vision and ML. Controlled via Raspberry Pi and Arduino. Built an autonomous robotic car capable of detecting and counting persons and objects.',
-                tech: ['Python', 'OpenCV', 'Machine Learning', 'Raspberry Pi', 'Arduino'],
-                image: 'robotcar.jpeg'
+                description: 'Advanced autonomous surveillance vehicle equipped with computer vision and machine learning capabilities for real-time object and person detection. Controlled via Raspberry Pi and Arduino integration.',
+                tags: ['AI', 'Robotics', 'Computer Vision', 'IoT'],
+                features: [
+                    'Real-time object detection using OpenCV and TensorFlow',
+                    'Autonomous navigation and obstacle avoidance',
+                    'Person counting and tracking functionality',
+                    'Raspberry Pi 4 with Arduino Mega integration',
+                    'Live video streaming to mobile/web interface',
+                    'Battery management and power optimization'
+                ],
+                technologies: ['Python', 'OpenCV', 'TensorFlow', 'Raspberry Pi', 'Arduino', 'Machine Learning', 'IoT Protocols'],
+                images: [
+                    'robotcar.jpeg',
+                    'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=70'
+                ],
+                links: [
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/roboscout' },
+                    { label: 'Project Report (PDF)', icon: 'fas fa-file-pdf', url: 'roboscout_report.pdf' },
+                    { label: 'Demo Video', icon: 'fas fa-video', url: 'https://youtube.com/roboscout-demo' },
+                    { label: 'IEEE Paper', icon: 'fas fa-graduation-cap', url: 'roboscout_ieee.pdf' },
+                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'roboscout_circuit.pdf' }
+                ]
             },
+            
+            // Projects - Wireless Power
             'wireless-power': {
-                title: 'Wireless Power Transmission Using Coil',
-                description: 'Designed and implemented a coil-based wireless power transmission system for low-power applications. Analyzed system efficiency and output performance.',
-                tech: ['Inductive Coupling', 'Power Electronics', 'Electronics Design', 'Circuit Analysis'],
-                image: 'power.jpeg'
+                title: 'Wireless Power Transmission Using Inductive Coupling',
+                description: 'Designed and implemented a coil-based wireless power transmission system for low-power applications. Analyzed system efficiency, transmission distance, and output performance.',
+                tags: ['Electronics', 'Power Systems', 'Innovation', 'Hardware'],
+                features: [
+                    'Inductive coupling power transmission up to 15cm distance',
+                    'Efficiency analysis at various distances and loads',
+                    'Low-power device charging capability (5V/1A)',
+                    'Circuit protection and safety features',
+                    'Performance optimization with tuning capacitors',
+                    'Experimental validation with measurement data'
+                ],
+                technologies: ['Electronics Design', 'Circuit Analysis', 'Power Electronics', 'MATLAB Simulation', 'PCB Design', 'Oscilloscope Measurement'],
+                images: [
+                    'power.jpeg',
+                    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'Project Report', icon: 'fas fa-file-pdf', url: 'wireless_power_report.pdf' },
+                    { label: 'Circuit Design', icon: 'fas fa-project-diagram', url: 'wireless_circuit.pdf' },
+                    { label: 'MATLAB Simulations', icon: 'fas fa-calculator', url: 'wireless_simulations.zip' },
+                    { label: 'Test Results', icon: 'fas fa-chart-bar', url: 'wireless_test_results.pdf' }
+                ]
             },
+            
+            // Projects - Smart Home
             'smart-home': {
                 title: 'Smart Home Safety & Security System',
-                description: 'Developed an Arduino-based home safety system integrating gas, smoke, and intrusion detection. Implemented person counting circuit, laser-based security, and alert display system.',
-                tech: ['Arduino', 'Sensors', 'Embedded Systems', 'IoT', 'Safety Systems'],
-                image: 'safety.jpeg'
-            },
-            'network-design': {
-                title: 'Small Organization Network Design',
-                description: 'Designed and simulated a small organization network using Cisco Packet Tracer. Configured routers, switches, VLANs, IP addressing, and tested network connectivity.',
-                tech: ['Cisco Packet Tracer', 'Routing', 'Switching', 'VLANs', 'Subnetting', 'Network Design'],
-                image: 'packet.jpeg'
+                description: 'Comprehensive Arduino-based home safety system integrating multiple sensors for gas, smoke, intrusion detection with person counting circuit, laser security, and alert display.',
+                tags: ['IoT', 'Embedded Systems', 'Security', 'Home Automation'],
+                features: [
+                    'Multi-sensor integration (MQ-2 gas, PIR motion, Ultrasonic)',
+                    'Laser-based intrusion detection system',
+                    'Real-time alert system with buzzer and LED indicators',
+                    'Person counting and occupancy monitoring',
+                    'LCD display for system status and alerts',
+                    'Mobile app integration capability via Bluetooth'
+                ],
+                technologies: ['Arduino Uno', 'C++', 'Sensor Networks', 'IoT Protocols', 'Embedded C', 'Circuit Design'],
+                images: [
+                    'safety.jpeg',
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=70'
+                ],
+                links: [
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/smart-home' },
+                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'smart_home_circuit.pdf' },
+                    { label: 'Project Documentation', icon: 'fas fa-book', url: 'smart_home_docs.pdf' },
+                    { label: 'Component List', icon: 'fas fa-list', url: 'smart_home_components.pdf' }
+                ]
             },
             
-            // Certificates
+            // Projects - Network Design
+            'network-design': {
+                title: 'Small Organization Network Infrastructure Design',
+                description: 'Complete network infrastructure design and simulation for a small organization using Cisco Packet Tracer. Includes router and switch configuration, VLAN setup, IP addressing, and security implementation.',
+                tags: ['Networking', 'Cisco', 'Security', 'Infrastructure'],
+                features: [
+                    'Complete network topology design for 50+ devices',
+                    'VLAN configuration and management for different departments',
+                    'Router and switch configuration with OSPF routing',
+                    'IP addressing and subnetting scheme implementation',
+                    'Network security implementation with ACLs',
+                    'Connectivity testing and validation across network'
+                ],
+                technologies: ['Cisco Packet Tracer', 'OSPF Routing', 'VLAN', 'Subnetting', 'Network Security', 'TCP/IP', 'ACLs'],
+                images: [
+                    'packet.jpeg',
+                    'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'Network Topology File', icon: 'fas fa-network-wired', url: 'network_topology.pkt' },
+                    { label: 'Configuration Files', icon: 'fas fa-code', url: 'network_configs.zip' },
+                    { label: 'Project Report', icon: 'fas fa-file-alt', url: 'network_design_report.pdf' },
+                    { label: 'IP Addressing Scheme', icon: 'fas fa-map', url: 'ip_scheme.pdf' }
+                ]
+            },
+            
+            // ===== CERTIFICATES - ALL DETAILS ADDED =====
+            
+            // Certificate - TryHackMe
             'tryhackme-cert': {
                 title: 'TryHackMe - Advent of Cyber 2025',
-                description: 'Successfully completed TryHackMe\'s Advent of Cyber (2025) by finishing all rooms and earning the official certificate and badge.',
-                image: 'tryhackme.jpg'
-            },
-            'matlab-cert': {
-                title: 'Engineering Design & Analysis with MATLAB',
-                description: 'Completed professional training conducted by the Institute of Information and Communication Technology (IICT), CUET, under the EDGE Project by Bangladesh Computer Council (BCC), ICT Division.',
-                image: 'matlab.jpg'
-            },
-            'ibm-cert': {
-                title: 'Data Analysis with Python - IBM',
-                description: 'Successfully completed the Data Analysis with Python course powered by IBM through Cognitive Class.ai.',
-                image: 'data.jfif'
-            },
-            'matlab-onramp': {
-                title: 'MATLAB Onramp',
-                description: 'Successfully completed MATLAB Onramp, covering MATLAB fundamentals, programming, and data analysis.',
-                image: 'onramp.jpg'
-            },
-            'alison-cert': {
-                title: 'Building a Successful Business Website - Alison',
-                description: 'Successfully completed training on designing and developing a professional business website.',
-                image: 'alison.jfif'
-            },
-            'cisco-security': {
-                title: 'Cisco Cybersecurity Badge',
-                description: 'Earned Cisco Cybersecurity badge demonstrating foundational knowledge of cyber threats, security principles, and defense mechanisms.',
-                image: 'cyber.jfif'
-            },
-            'cisco-networking': {
-                title: 'Cisco Networking Basics Badge',
-                description: 'Earned Cisco Networking Basics badge covering networking fundamentals, IP addressing, and basic routing concepts.',
-                image: 'network.png'
+                description: 'Successfully completed TryHackMe\'s Advent of Cyber (2025) challenge, completing all 25+ rooms covering various cybersecurity concepts, penetration testing techniques, and security fundamentals.',
+                tags: ['Cybersecurity', 'Certification', 'Penetration Testing'],
+                features: [
+                    'Completed 25+ cybersecurity challenges',
+                    'Hands-on penetration testing experience',
+                    'Network security and reconnaissance',
+                    'Web application security testing',
+                    'Cryptography and encryption techniques',
+                    'Digital forensics basics',
+                    'Incident response procedures'
+                ],
+                technologies: ['Linux', 'Networking', 'Web Security', 'Cryptography', 'Penetration Testing', 'Digital Forensics'],
+                images: ['tryhackme.jpg'],
+                links: [
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'tryhackme_certificate.pdf' },
+                    { label: 'TryHackMe Profile', icon: 'fas fa-user', url: 'https://tryhackme.com/p/yourprofile' },
+                    { label: 'Skill Badges', icon: 'fas fa-award', url: 'tryhackme_badges.pdf' }
+                ]
             },
             
-            // Achievements
-            'project-show-award': {
-                title: 'Third Position - Project Show',
-                description: 'Awarded third place in Digital Logic Design Course for the project "Safety Home and Security System", recognizing innovation in embedded system design and practical implementation.',
-                image: 'achivement.jpeg'
+            // Certificate - MATLAB Engineering Design
+            'matlab-cert': {
+                title: 'Engineering Design & Analysis with MATLAB',
+                description: 'Professional training on MATLAB for engineering design and analysis conducted by Institute of Information and Communication Technology (IICT), CUET, under the EDGE Project by Bangladesh Computer Council.',
+                tags: ['MATLAB', 'Engineering', 'Simulation', 'Training'],
+                features: [
+                    'MATLAB programming fundamentals and syntax',
+                    'Engineering simulations and mathematical modeling',
+                    'Data analysis and visualization techniques',
+                    'Algorithm development and optimization',
+                    'Application development with GUI',
+                    'Real-world engineering problem solving'
+                ],
+                technologies: ['MATLAB', 'Simulink', 'Data Analysis', 'Numerical Methods', 'GUI Development'],
+                images: ['matlab.jpg'],
+                links: [
+                    { label: 'Certificate PDF', icon: 'fas fa-certificate', url: 'matlab_certificate.pdf' },
+                    { label: 'Course Materials', icon: 'fas fa-book', url: 'matlab_materials.zip' },
+                    { label: 'Project Files', icon: 'fas fa-file-code', url: 'matlab_projects.zip' }
+                ]
             },
-            'cisco-security-badge': {
-                title: 'Cisco Cybersecurity Badge',
-                description: 'Earned Cisco Cybersecurity badge demonstrating foundational knowledge of cyber threats, security principles, and defense mechanisms.',
-                image: 'cyber.jfif'
+            
+            // Certificate - IBM Data Analysis
+            'ibm-cert': {
+                title: 'Data Analysis with Python - IBM Cognitive Class',
+                description: 'Completed the Data Analysis with Python course powered by IBM through Cognitive Class.ai, covering data manipulation, analysis, and visualization using Python libraries.',
+                tags: ['Data Science', 'Python', 'IBM', 'Certification'],
+                features: [
+                    'Data manipulation with Pandas library',
+                    'Data visualization with Matplotlib and Seaborn',
+                    'Statistical analysis techniques',
+                    'Data cleaning and preprocessing',
+                    'Exploratory data analysis (EDA)',
+                    'Real-world dataset analysis'
+                ],
+                technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter Notebook'],
+                images: ['data.jfif'],
+                links: [
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'ibm_certificate.pdf' },
+                    { label: 'Course Projects', icon: 'fas fa-project-diagram', url: 'ibm_projects.zip' },
+                    { label: 'IBM Profile', icon: 'fas fa-user-tie', url: 'https://cognitiveclass.ai/users/yourprofile' }
+                ]
             },
-            'cisco-networking-badge': {
+            
+            // Certificate - MATLAB Onramp
+            'matlab-onramp': {
+                title: 'MATLAB Onramp - MathWorks Certification',
+                description: 'Successfully completed MATLAB Onramp course covering MATLAB fundamentals, programming concepts, data analysis, and visualization techniques.',
+                tags: ['MATLAB', 'Programming', 'MathWorks', 'Fundamentals'],
+                features: [
+                    'MATLAB environment and basic operations',
+                    'Programming fundamentals and script writing',
+                    'Data import and export operations',
+                    'Data visualization and plotting',
+                    'Basic data analysis techniques',
+                    'Problem-solving with MATLAB'
+                ],
+                technologies: ['MATLAB', 'Programming Basics', 'Data Visualization', 'Scripting'],
+                images: ['onramp.jpg'],
+                links: [
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'matlab_onramp_certificate.pdf' },
+                    { label: 'Course Exercises', icon: 'fas fa-code', url: 'matlab_exercises.zip' },
+                    { label: 'MathWorks Profile', icon: 'fas fa-graduation-cap', url: 'https://matlabacademy.mathworks.com' }
+                ]
+            },
+            
+            // Certificate - Alison Business Website
+            'alison-cert': {
+                title: 'Building a Successful Business Website - Alison',
+                description: 'Completed comprehensive training on designing and developing professional business websites, covering planning, design, development, and deployment.',
+                tags: ['Web Development', 'Business', 'Alison', 'Certification'],
+                features: [
+                    'Website planning and requirement analysis',
+                    'UI/UX design principles for business websites',
+                    'Front-end development with HTML/CSS',
+                    'Responsive design implementation',
+                    'Website deployment and hosting',
+                    'SEO and digital marketing basics'
+                ],
+                technologies: ['HTML5', 'CSS3', 'Responsive Design', 'UI/UX', 'SEO', 'Web Hosting'],
+                images: ['alison.jfif'],
+                links: [
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'alison_certificate.pdf' },
+                    { label: 'Course Materials', icon: 'fas fa-book', url: 'alison_materials.pdf' },
+                    { label: 'Alison Profile', icon: 'fas fa-user-graduate', url: 'https://alison.com/users/yourprofile' }
+                ]
+            },
+            
+            // Certificate - Cisco Cybersecurity
+            'cisco-security': {
+                title: 'Cisco Cybersecurity Essentials Badge',
+                description: 'Earned Cisco Cybersecurity Essentials badge demonstrating foundational knowledge of cyber threats, security principles, defense mechanisms, and network security concepts.',
+                tags: ['Cybersecurity', 'Cisco', 'Networking', 'Security'],
+                features: [
+                    'Understanding of cybersecurity threats and vulnerabilities',
+                    'Security principles and best practices',
+                    'Network security fundamentals',
+                    'Endpoint security concepts',
+                    'Data protection techniques',
+                    'Security monitoring and response'
+                ],
+                technologies: ['Network Security', 'Cybersecurity Fundamentals', 'Cisco Technologies', 'Security Protocols'],
+                images: ['cyber.jfif'],
+                links: [
+                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf' },
+                    { label: 'Cisco Profile', icon: 'fas fa-network-wired', url: 'https://www.netacad.com/yourprofile' },
+                    { label: 'Skill Metrics', icon: 'fas fa-chart-pie', url: 'cisco_skills.pdf' }
+                ]
+            },
+            
+            // Certificate - Cisco Networking Basics
+            'cisco-networking': {
                 title: 'Cisco Networking Basics Badge',
-                description: 'Earned Cisco Networking Basics badge covering networking fundamentals, IP addressing, and basic routing concepts.',
-                image: 'network.png'
+                description: 'Earned Cisco Networking Basics badge covering networking fundamentals, IP addressing, routing concepts, and basic network configuration.',
+                tags: ['Networking', 'Cisco', 'CCNA', 'Fundamentals'],
+                features: [
+                    'Networking fundamentals and concepts',
+                    'IP addressing and subnetting',
+                    'Basic routing and switching concepts',
+                    'Network device configuration',
+                    'Network troubleshooting basics',
+                    'Protocol understanding (TCP/IP, DNS, DHCP)'
+                ],
+                technologies: ['Networking Fundamentals', 'IP Addressing', 'Routing Basics', 'Cisco IOS'],
+                images: ['network.png'],
+                links: [
+                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf' },
+                    { label: 'Lab Exercises', icon: 'fas fa-laptop-code', url: 'cisco_labs.zip' },
+                    { label: 'Cisco Profile', icon: 'fas fa-user-tie', url: 'https://www.netacad.com/yourprofile' }
+                ]
+            },
+            
+            // ===== ACHIEVEMENTS - ALL DETAILS ADDED =====
+            
+            // Achievement - Project Show Award
+            'project-show-award': {
+                title: 'Third Position - Digital Logic Design Project Show',
+                description: 'Awarded third place in Digital Logic Design Course for the innovative project "Safety Home and Security System", recognizing excellence in embedded system design and practical implementation.',
+                tags: ['Award', 'Recognition', 'Embedded Systems', 'Competition'],
+                features: [
+                    'Innovative safety system design with multiple sensors',
+                    'Practical implementation and real-world testing',
+                    'Judged by faculty and industry experts',
+                    'Recognition among 50+ participating teams',
+                    'Demonstrated technical excellence and innovation',
+                    'Comprehensive documentation and presentation'
+                ],
+                technologies: ['Digital Logic', 'Embedded Systems', 'Circuit Design', 'Sensor Integration'],
+                images: [
+                    'achivement.jpeg',
+                    'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+                    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                ],
+                links: [
+                    { label: 'Award Certificate', icon: 'fas fa-award', url: 'project_show_award.pdf' },
+                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'safety_system_docs.pdf' },
+                    { label: 'Judges Feedback', icon: 'fas fa-comments', url: 'judges_feedback.pdf' },
+                    { label: 'Competition Details', icon: 'fas fa-trophy', url: 'competition_info.pdf' }
+                ]
+            },
+            
+            // Achievement - Cisco Cybersecurity Badge
+            'cisco-security-badge': {
+                title: 'Cisco Cybersecurity Essentials Badge',
+                description: 'Earned Cisco Cybersecurity Essentials badge demonstrating comprehensive understanding of cybersecurity principles, threats, and defense strategies.',
+                tags: ['Cybersecurity', 'Cisco', 'Achievement', 'Networking'],
+                features: [
+                    'Comprehensive cybersecurity knowledge assessment',
+                    'Understanding of modern cyber threats',
+                    'Security architecture and defense strategies',
+                    'Network security implementation',
+                    'Risk assessment and management',
+                    'Security policy development'
+                ],
+                technologies: ['Cybersecurity', 'Network Security', 'Security Protocols', 'Cisco Technologies'],
+                images: ['cyber.jfif'],
+                links: [
+                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf' },
+                    { label: 'Skill Assessment', icon: 'fas fa-chart-line', url: 'security_skills_assessment.pdf' },
+                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id' }
+                ]
+            },
+            
+            // Achievement - Cisco Networking Basics Badge
+            'cisco-networking-badge': {
+                title: 'Cisco Networking Basics Achievement',
+                description: 'Earned Cisco Networking Basics badge demonstrating proficiency in networking fundamentals, IP addressing, and basic network configuration.',
+                tags: ['Networking', 'Cisco', 'Achievement', 'Infrastructure'],
+                features: [
+                    'Networking concepts and terminology mastery',
+                    'IP addressing and subnetting proficiency',
+                    'Basic router and switch configuration',
+                    'Network troubleshooting skills',
+                    'Protocol understanding and implementation',
+                    'Network design fundamentals'
+                ],
+                technologies: ['Networking Fundamentals', 'IP Addressing', 'Cisco IOS', 'Network Protocols'],
+                images: ['network.png'],
+                links: [
+                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf' },
+                    { label: 'Lab Completion Certificate', icon: 'fas fa-laptop-code', url: 'lab_completion.pdf' },
+                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id' }
+                ]
             }
         };
 
-        // Function to open modal
+        // ===== Carousel/Slider Functionality - Faster & Smaller =====
+        class Carousel {
+            constructor() {
+                this.slider = document.querySelector('.carousel-slider');
+                this.slides = document.querySelectorAll('.carousel-slide');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.prevBtn = document.querySelector('.carousel-prev');
+                this.nextBtn = document.querySelector('.carousel-next');
+                this.currentIndex = 0;
+                this.interval = 3000; // FASTER: Changed from 5000ms to 3000ms (3 seconds)
+                
+                this.init();
+            }
+            
+            init() {
+                // Event listeners
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Dot click events
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Auto-slide - FASTER
+                this.startAutoSlide();
+                
+                // Pause on hover
+                this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
+                this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
+                
+                // Touch/swipe support
+                this.setupTouchEvents();
+            }
+            
+            setupTouchEvents() {
+                let startX = 0;
+                let endX = 0;
+                
+                this.slider.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.slider.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    this.handleSwipe(startX, endX);
+                });
+            }
+            
+            handleSwipe(startX, endX) {
+                const threshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide(); // Swipe left
+                    } else {
+                        this.prevSlide(); // Swipe right
+                    }
+                }
+            }
+            
+            updateSlider() {
+                this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                
+                // Update active states
+                this.slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === this.currentIndex);
+                });
+                
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            nextSlide() {
+                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+                this.updateSlider();
+            }
+            
+            prevSlide() {
+                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.updateSlider();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateSlider();
+            }
+            
+            startAutoSlide() {
+                this.stopAutoSlide();
+                this.autoSlideInterval = setInterval(() => this.nextSlide(), this.interval);
+            }
+            
+            stopAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                }
+            }
+        }
+
+        // ===== Enhanced Modal Functions =====
+        let currentModalData = null;
+        let currentTab = 'overview';
+
         function openModal(id) {
             const data = modalData[id];
-            if (!data) return;
+            if (!data) {
+                console.error('No data found for:', id);
+                // Show a professional message instead of alert
+                showErrorMessage(id);
+                return;
+            }
             
+            currentModalData = data;
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
             const modalDescription = document.getElementById('modalDescription');
             const modalTech = document.getElementById('modalTech');
+            const modalFeatures = document.getElementById('modalFeatures');
+            const modalTechnologies = document.getElementById('modalTechnologies');
+            const modalLinks = document.getElementById('modalLinks');
+            const modalGallery = document.getElementById('modalGallery');
+            const modalTags = document.getElementById('modalTags');
+            const galleryContainer = document.getElementById('galleryContainer');
             
-            // Set modal content
+            // Set basic content
             modalTitle.textContent = data.title;
             modalDescription.textContent = data.description;
             
-            // Set image if available
-            if (data.image) {
-                modalImage.src = data.image;
+            // Set main image
+            if (data.images && data.images[0]) {
+                modalImage.src = data.images[0];
                 modalImage.style.display = 'block';
             } else {
                 modalImage.style.display = 'none';
             }
             
-            // Set tech tags if available
+            // Set tags
+            modalTags.innerHTML = '';
+            if (data.tags) {
+                data.tags.forEach(tag => {
+                    const tagSpan = document.createElement('span');
+                    tagSpan.className = 'image-tag';
+                    tagSpan.textContent = tag;
+                    modalTags.appendChild(tagSpan);
+                });
+            }
+            
+            // Set tech tags
             modalTech.innerHTML = '';
-            if (data.tech) {
-                data.tech.forEach(tag => {
+            if (data.technologies) {
+                data.technologies.forEach(tech => {
                     const techTag = document.createElement('span');
                     techTag.className = 'modal-tech-tag';
-                    techTag.textContent = tag;
+                    techTag.textContent = tech;
                     modalTech.appendChild(techTag);
                 });
             }
+            
+            // Set features
+            modalFeatures.innerHTML = '';
+            if (data.features) {
+                data.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    modalFeatures.appendChild(li);
+                });
+            }
+            
+            // Set technologies
+            modalTechnologies.innerHTML = '';
+            if (data.technologies) {
+                data.technologies.forEach(tech => {
+                    const li = document.createElement('li');
+                    li.textContent = tech;
+                    modalTechnologies.appendChild(li);
+                });
+            }
+            
+            // Set links
+            modalLinks.innerHTML = '';
+            if (data.links) {
+                data.links.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.className = 'modal-link';
+                    a.target = '_blank';
+                    a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                    modalLinks.appendChild(a);
+                });
+            }
+            
+            // Set gallery
+            modalGallery.innerHTML = '';
+            if (data.images && data.images.length > 1) {
+                galleryContainer.style.display = 'block';
+                data.images.forEach((imgSrc, index) => {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.className = 'modal-gallery-img';
+                    if (index === 0) img.classList.add('active');
+                    img.onclick = () => {
+                        modalImage.src = imgSrc;
+                        document.querySelectorAll('.modal-gallery-img').forEach(i => i.classList.remove('active'));
+                        img.classList.add('active');
+                    };
+                    modalGallery.appendChild(img);
+                });
+            } else {
+                galleryContainer.style.display = 'none';
+            }
+            
+            // Reset to overview tab
+            switchTab('overview');
+            
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', handleModalKeyboard);
+        }
+
+        function showErrorMessage(id) {
+            // Create a fallback modal with the item ID
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalTech = document.getElementById('modalTech');
+            const modalFeatures = document.getElementById('modalFeatures');
+            const modalTechnologies = document.getElementById('modalTechnologies');
+            const modalLinks = document.getElementById('modalLinks');
+            const modalGallery = document.getElementById('modalGallery');
+            const modalTags = document.getElementById('modalTags');
+            const galleryContainer = document.getElementById('galleryContainer');
+            
+            // Set basic content
+            modalTitle.textContent = id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            modalDescription.textContent = 'Detailed information for this item is being prepared. Please check back soon or contact me for more information.';
+            
+            // Hide image
+            modalImage.style.display = 'none';
+            
+            // Set default tags
+            modalTags.innerHTML = '<span class="image-tag">Coming Soon</span><span class="image-tag">In Progress</span>';
+            
+            // Clear other sections
+            modalTech.innerHTML = '';
+            modalFeatures.innerHTML = '<li>Details are being prepared</li><li>Check back soon for updates</li>';
+            modalTechnologies.innerHTML = '<li>Information pending</li>';
+            modalLinks.innerHTML = '';
+            modalGallery.innerHTML = '';
+            galleryContainer.style.display = 'none';
+            
+            // Reset to overview tab
+            switchTab('overview');
             
             // Show modal
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
-        // Function to close modal
+        function handleModalKeyboard(e) {
+            if (!currentModalData) return;
+            
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowRight') {
+                const modalImage = document.getElementById('modalImage');
+                const galleryImages = document.querySelectorAll('.modal-gallery-img');
+                const currentIndex = Array.from(galleryImages).findIndex(img => img.classList.contains('active'));
+                if (galleryImages.length > 0) {
+                    const nextIndex = (currentIndex + 1) % galleryImages.length;
+                    galleryImages[nextIndex].click();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                const modalImage = document.getElementById('modalImage');
+                const galleryImages = document.querySelectorAll('.modal-gallery-img');
+                const currentIndex = Array.from(galleryImages).findIndex(img => img.classList.contains('active'));
+                if (galleryImages.length > 0) {
+                    const prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                    galleryImages[prevIndex].click();
+                }
+            }
+        }
+
+        function switchTab(tabName) {
+            currentTab = tabName;
+            
+            // Update tab buttons
+            document.querySelectorAll('.modal-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.textContent.toLowerCase().includes(tabName));
+            });
+            
+            // Update tab content
+            document.querySelectorAll('.modal-tab-content').forEach(content => {
+                content.classList.toggle('active', content.id === tabName + 'Tab');
+            });
+        }
+
         function closeModal() {
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
+            
+            // Remove keyboard listener
+            document.removeEventListener('keydown', handleModalKeyboard);
         }
 
         // Close modal when clicking outside
@@ -1890,96 +3128,112 @@
             }
         }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
+        // ===== Initialize Everything =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel (FASTER & SMALLER)
+            if (document.querySelector('.carousel-container')) {
+                new Carousel();
             }
-        });
-
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
-        
-        // Add active class to navigation links on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        const observerOptions = {
-            threshold: 0.3,
-            rootMargin: '0px 0px -50% 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
+            
+            // Add click handlers to all clickable images
+            document.querySelectorAll('[onclick*="openModal"]').forEach(element => {
+                const match = element.getAttribute('onclick').match(/openModal\('([^']+)'\)/);
+                if (match) {
+                    element.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        openModal(match[1]);
+                    });
+                }
+            });
+            
+            // Initialize animations
+            const heroSection = document.getElementById('home');
+            heroSection.classList.add('animate-section');
+            
+            // Form submission handler
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+            
+            // Navigation active state
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50% 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to corresponding link
+                        const id = entry.target.getAttribute('id');
+                        const correspondingLink = document.querySelector(`.nav-links a[href="#${id}"]`);
+                        if (correspondingLink) {
+                            correspondingLink.classList.add('active');
+                        }
+                        
+                        // Add animation to section
+                        entry.target.classList.add('animate-section');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scroll for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (!targetSection) return;
+                    
                     // Remove active class from all links
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
                     
-                    // Add active class to corresponding link
-                    const id = entry.target.getAttribute('id');
-                    document.querySelector(`.nav-links a[href="#${id}"]`).classList.add('active');
+                    // Add active class to clicked link
+                    this.classList.add('active');
                     
-                    // Add animation to section
-                    entry.target.classList.add('animate-section');
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Smooth scroll for navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                // Remove active class from all links
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                });
-                
-                // Add active class to clicked link
-                this.classList.add('active');
-                
-                // Scroll to target section
-                window.scrollTo({
-                    top: targetSection.offsetTop - 20,
-                    behavior: 'smooth'
+                    // Scroll to target section
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
                 });
             });
         });
-        
-        // Mobile navigation toggle
-        function toggleNav() {
-            const sidebar = document.querySelector('.sidebar');
-            const mainContent = document.querySelector('.main-content');
-            
-            if (window.innerWidth <= 992) {
-                sidebar.classList.toggle('active');
-                if (sidebar.classList.contains('active')) {
-                    mainContent.style.marginLeft = '0';
-                } else {
-                    mainContent.style.marginLeft = '280px';
-                }
-            }
-        }
-        
-        // Initialize animations on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroSection = document.getElementById('home');
-            heroSection.classList.add('animate-section');
-        });
+
+        // ===== ADD MORE ITEMS HERE IF NEEDED =====
+        // To add more items, use this format:
+        /*
+        modalData['new-item-id'] = {
+            title: 'Title Here',
+            description: 'Description here',
+            tags: ['Tag1', 'Tag2'],
+            features: ['Feature 1', 'Feature 2'],
+            technologies: ['Tech1', 'Tech2'],
+            images: ['image1.jpg'],
+            links: [
+                { label: 'Link 1', icon: 'fas fa-icon', url: 'link.pdf' }
+            ]
+        };
+        */
     </script>
 </body>
 </html>
