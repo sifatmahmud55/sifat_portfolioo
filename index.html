@@ -429,6 +429,14 @@
             font-size: 18px;
             color: var(--secondary);
             margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .edu-subtitle img {
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
         }
 
         .edu-details {
@@ -1306,6 +1314,294 @@
             font-size: 10px;
         }
 
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .video-modal-content {
+            position: relative;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 900px;
+            height: 80%;
+            background-color: var(--primary-dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .video-placeholder i {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .video-placeholder h3 {
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        .video-placeholder p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            max-width: 500px;
+        }
+
+        .external-video-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--secondary);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .external-video-link:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+        }
+
+        /* PDF Viewer Styles */
+        .pdf-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pdf-viewer-content {
+            position: relative;
+            margin: 2% auto;
+            width: 95%;
+            height: 95%;
+            background-color: var(--primary-dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-header {
+            padding: 20px;
+            background: var(--primary);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pdf-title {
+            color: var(--light-gray);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .pdf-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pdf-action-btn {
+            padding: 8px 20px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pdf-action-btn:hover {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+
+        .pdf-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+
+        .pdf-fallback {
+            flex: 1;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pdf-fallback i {
+            font-size: 60px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .pdf-fallback h3 {
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+
+        .pdf-fallback a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--secondary);
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .pdf-fallback a:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+        }
+
+        /* Image Viewer Styles */
+        .image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-viewer-content {
+            position: relative;
+            margin: 2% auto;
+            width: 95%;
+            height: 95%;
+            background-color: var(--primary-dark);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-header {
+            padding: 20px;
+            background: var(--primary);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .image-title {
+            color: var(--light-gray);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .image-display {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--primary);
+        }
+
+        .image-display img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .image-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .image-action-btn {
+            padding: 8px 20px;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .image-action-btn:hover {
+            background: var(--secondary);
+            color: var(--primary-dark);
+        }
+
         /* Mobile Responsiveness */
         @media (max-width: 1200px) {
             .sidebar {
@@ -1339,6 +1635,13 @@
             
             .carousel-container {
                 height: 350px;
+            }
+            
+            .video-modal-content,
+            .pdf-viewer-content,
+            .image-viewer-content {
+                width: 95%;
+                margin: 1% auto;
             }
         }
 
@@ -1427,6 +1730,14 @@
             
             .carousel-content p {
                 font-size: 14px;
+            }
+            
+            .video-modal-content,
+            .pdf-viewer-content,
+            .image-viewer-content {
+                width: 98%;
+                margin: 0.5% auto;
+                height: 95%;
             }
         }
 
@@ -1531,6 +1842,20 @@
                 width: 8px;
                 height: 8px;
             }
+            
+            .pdf-header,
+            .image-header {
+                padding: 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .pdf-actions,
+            .image-actions {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1591,6 +1916,15 @@
             .carousel-content .btn {
                 padding: 8px 15px;
                 font-size: 14px;
+            }
+            
+            .video-modal-content,
+            .pdf-viewer-content,
+            .image-viewer-content {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                height: 100%;
             }
         }
 
@@ -1662,7 +1996,7 @@
                 <p><i class="fas fa-globe"></i> www.sifat-portfolio.com</p>
                 
                 <!-- LinkedIn Profile in Sidebar -->
-                <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" class="linkedin-sidebar">
+                <a href="https://www.linkedin.com/in/syed-sifat-mahmud-5498852a5/" target="_blank" class="linkedin-sidebar">
                     <i class="fab fa-linkedin"></i>
                     <span>Connect on LinkedIn</span>
                 </a>
@@ -1698,8 +2032,10 @@
                         <h3>Education</h3>
                         <div class="education-item">
                             <h4 class="edu-title">Bachelor of Science - Electronics and Telecommunication Engineering</h4>
-                            
-                            <p class="edu-subtitle">Chittagong University of Engineering and Technology | CGPA: 3.65</p>
+                            <p class="edu-subtitle">
+                                <img src="CUET_Logo.svg.png" alt="CUET Logo" style="height: 24px; vertical-align: middle; margin-right: 10px;">
+                                Chittagong University of Engineering and Technology | CGPA: 3.65
+                            </p>
                             <p class="edu-details">January 2022 - March 2027</p>
                             <p class="edu-details"><strong>Key Courses:</strong> Data Structures and Algorithms, Object Oriented Programming, Control System, Artificial Intelligence, Machine Learning, Networking(CCNA), Databases, Microprocessor, VLSI</p>
                         </div>
@@ -2156,27 +2492,6 @@
                         <div class="carousel-dot"></div>
                     </div>
                 </div>
-                
-                <!-- ===== TAGS SECTION - Add Your Images Here ===== -->
-                <div style="margin-top: 40px; text-align: center;">
-                    <h3 style="color: var(--light-gray); margin-bottom: 20px;">How to Add More Images</h3>
-                    <div style="background: var(--primary-light); padding: 20px; border-radius: var(--border-radius); border: 1px solid rgba(100, 255, 218, 0.1);">
-                        <p style="color: var(--secondary); margin-bottom: 15px; font-size: 14px;">
-                            <i class="fas fa-code"></i> Add more images by editing the JavaScript carousel data
-                        </p>
-                        <pre style="background: var(--primary-dark); padding: 15px; border-radius: var(--border-radius); color: var(--text-light); text-align: left; overflow-x: auto; font-size: 12px; line-height: 1.4;">
-// In the JavaScript, add more slides to the carouselSlides array:
-const carouselSlides = [
-    {
-        image: 'your-image.jpg',
-        title: 'Your Title',
-        description: 'Your description',
-        link: '#section'
-    },
-    // Add more slides here...
-];</pre>
-                    </div>
-                </div>
             </section>
             
             <!-- Contact Section -->
@@ -2224,7 +2539,7 @@ const carouselSlides = [
                             <div>
                                 <h4>LinkedIn</h4>
                                 <p>Connect with me on LinkedIn</p>
-                                <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" style="color: var(--secondary); text-decoration: none;">
+                                <a href="https://www.linkedin.com/in/syed-sifat-mahmud-5498852a5/" target="_blank" style="color: var(--secondary); text-decoration: none;">
                                     View Profile <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
@@ -2270,7 +2585,7 @@ const carouselSlides = [
                     
                     <div class="social-links">
                         <!-- LinkedIn with specific styling -->
-                        <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" class="linkedin">
+                        <a href="https://www.linkedin.com/in/syed-sifat-mahmud-5498852a5/" target="_blank" class="linkedin">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="https://github.com/yourusername" target="_blank">
@@ -2287,7 +2602,7 @@ const carouselSlides = [
                 
                 <div class="copyright">
                     <p>&copy; 2025 Sifat Mahmud. All Rights Reserved. | 
-                        <a href="https://www.linkedin.com/in/sifat-mahmud-12345678/" target="_blank" style="color: var(--secondary); text-decoration: none;">
+                        <a href="https://www.linkedin.com/in/syed-sifat-mahmud-5498852a5/" target="_blank" style="color: var(--secondary); text-decoration: none;">
                             <i class="fab fa-linkedin"></i> Connect on LinkedIn
                         </a>
                     </p>
@@ -2359,8 +2674,77 @@ const carouselSlides = [
         </div>
     </div>
 
+    <!-- ===== NEW: Video Modal ===== -->
+    <div id="videoModal" class="video-modal">
+        <button class="close-modal" onclick="closeVideoModal()">&times;</button>
+        <div class="video-modal-content">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="video-placeholder" id="videoPlaceholder">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>Demo Video</h3>
+                        <p id="videoDescription">Click the button below to watch the demo video directly on LinkedIn</p>
+                        <a href="#" target="_blank" class="external-video-link" id="directVideoLink">
+                            <i class="fas fa-external-link-alt"></i>
+                            Watch Demo Video on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NEW: PDF Viewer Modal ===== -->
+    <div id="pdfViewer" class="pdf-viewer">
+        <button class="close-modal" onclick="closePdfViewer()">&times;</button>
+        <div class="pdf-viewer-content">
+            <div class="pdf-container">
+                <div class="pdf-header">
+                    <div class="pdf-title" id="pdfTitle">Project Report</div>
+                    <div class="pdf-actions">
+                        <button class="pdf-action-btn" onclick="downloadPdf()">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="pdf-action-btn" onclick="printPdf()">
+                            <i class="fas fa-print"></i> Print
+                        </button>
+                    </div>
+                </div>
+                <iframe src="" class="pdf-iframe" id="pdfFrame"></iframe>
+                <div class="pdf-fallback" id="pdfFallback">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>PDF Viewer</h3>
+                    <p>Your browser doesn't support PDF preview. Please download the file to view it.</p>
+                    <a href="#" id="pdfDownloadLink" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== NEW: Image Viewer Modal ===== -->
+    <div id="imageViewer" class="image-viewer">
+        <button class="close-modal" onclick="closeImageViewer()">&times;</button>
+        <div class="image-viewer-content">
+            <div class="image-container">
+                <div class="image-header">
+                    <div class="image-title" id="imageViewerTitle">Circuit Design</div>
+                    <div class="image-actions">
+                        <button class="image-action-btn" onclick="downloadImage()">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <div class="image-display">
+                    <img src="" alt="Circuit Design" id="fullSizeImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // ===== COMPLETE Enhanced Modal Data =====
+        // ===== COMPLETE Enhanced Modal Data with Direct Links =====
         const modalData = {
             // Profile
             'profile': {
@@ -2377,10 +2761,10 @@ const carouselSlides = [
                 technologies: ['Python', 'C/C++', 'Arduino', 'MATLAB', 'Django', 'HTML/CSS', 'JavaScript', 'SQL'],
                 images: ['profile.jpeg', 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'],
                 links: [
-                    { label: 'Download CV', icon: 'fas fa-download', url: 'cv_sifat.pdf' },
-                    { label: 'LinkedIn Profile', icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/sifat-mahmud-12345678/' },
-                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername' },
-                    { label: 'Academic Transcript', icon: 'fas fa-graduation-cap', url: 'transcript.pdf' }
+                    { label: 'Download CV', icon: 'fas fa-download', url: 'cv_sifat.pdf', type: 'pdf' },
+                    { label: 'LinkedIn Profile', icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/syed-sifat-mahmud-5498852a5/', type: 'external' },
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername', type: 'external' },
+                    { label: 'Academic Transcript', icon: 'fas fa-graduation-cap', url: 'transcript.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2404,38 +2788,40 @@ const carouselSlides = [
                     'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                 ],
                 links: [
-                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/progress-nest' },
-                    { label: 'Live Demo', icon: 'fas fa-external-link-alt', url: 'https://progress-nest.demo.com' },
-                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'progress_nest_docs.pdf' },
-                    { label: 'Database Schema', icon: 'fas fa-database', url: 'progress_nest_schema.pdf' }
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/progress-nest', type: 'external' },
+                    { label: 'Live Demo', icon: 'fas fa-external-link-alt', url: 'https://progress-nest.demo.com', type: 'external' },
+                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'progress_nest_docs.pdf', type: 'pdf' },
+                    { label: 'Database Schema', icon: 'fas fa-database', url: 'progress_nest_schema.pdf', type: 'pdf' }
                 ]
             },
             
-            // Projects - Lumira Medica
+            // Projects - Lumira Medica (UPDATED with direct video links)
             'lumira-medica': {
                 title: 'Lumira Medica - Online Medicine Ordering System',
-                description: 'Complete online pharmacy platform developed for a new medicine entrepreneur. Features medicine catalog, shopping cart, order management, and customer database.',
+                description: 'Complete online pharmacy platform developed for a new medicine entrepreneur. Features medicine catalog, shopping cart, order management, and customer database with Google Data Sheets integration.',
                 tags: ['E-commerce', 'Healthcare', 'Database', 'Web App'],
                 features: [
                     'Medicine catalog with search and filter functionality',
                     'Shopping cart and secure checkout system',
                     'Order tracking and management dashboard',
+                    'Google Data Sheets integration for order tracking',
                     'Customer database with purchase history',
                     'Admin panel for inventory management',
                     'Prescription upload and verification system',
                     'Delivery tracking integration'
                 ],
-                technologies: ['HTML', 'CSS', 'JavaScript', 'SQLite', 'PHP', 'Bootstrap', 'jQuery', 'REST API'],
+                technologies: ['HTML', 'CSS', 'JavaScript', 'Google Sheets API', 'PHP', 'Bootstrap', 'jQuery', 'REST API'],
                 images: [
                     'lumira.jpeg',
                     'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
                     'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                 ],
                 links: [
-                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/lumira-medica' },
-                    { label: 'Project Report', icon: 'fas fa-file-pdf', url: 'lumira_medica_report.pdf' },
-                    { label: 'Database Design', icon: 'fas fa-project-diagram', url: 'lumira_database.pdf' },
-                    { label: 'User Manual', icon: 'fas fa-book', url: 'lumira_user_manual.pdf' }
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/sifatmahmud55/Lumira_medica', type: 'external' },
+                    { label: 'Demo Video', icon: 'fas fa-video', url: 'https://www.linkedin.com/posts/syed-sifat-mahmud-5498852a5_webdevelopment-websitedesign-webdeveloper-activity-7421568497257930752-TSZT?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmiXMkB5pElSYVqxv17Jgp7rOHNO0N6b0c', type: 'video' },
+                    { label: 'Project Report', icon: 'fas fa-file-pdf', url: 'lumira_medica_report.pdf', type: 'pdf' },
+                    { label: 'Database Design', icon: 'fas fa-project-diagram', url: 'lumira_database.pdf', type: 'pdf' },
+                    { label: 'User Manual', icon: 'fas fa-book', url: 'lumira_user_manual.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2460,13 +2846,13 @@ const carouselSlides = [
                     'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                 ],
                 links: [
-                    { label: 'View Source Code', icon: 'fab fa-github', url: 'https://github.com/yourusername/portfolio' },
-                    { label: 'Design Mockups', icon: 'fas fa-palette', url: 'portfolio_designs.pdf' },
-                    { label: 'Performance Report', icon: 'fas fa-chart-line', url: 'portfolio_performance.pdf' }
+                    { label: 'View Source Code', icon: 'fab fa-github', url: 'https://github.com/yourusername/portfolio', type: 'external' },
+                    { label: 'Design Mockups', icon: 'fas fa-palette', url: 'portfolio_designs.pdf', type: 'pdf' },
+                    { label: 'Performance Report', icon: 'fas fa-chart-line', url: 'portfolio_performance.pdf', type: 'pdf' }
                 ]
             },
             
-            // Projects - RoboScout
+            // Projects - RoboScout (UPDATED with direct video and report links)
             'roboscout': {
                 title: 'RoboScout - Autonomous Surveillance & Detection Car',
                 description: 'Advanced autonomous surveillance vehicle equipped with computer vision and machine learning capabilities for real-time object and person detection. Controlled via Raspberry Pi and Arduino integration.',
@@ -2477,28 +2863,30 @@ const carouselSlides = [
                     'Person counting and tracking functionality',
                     'Raspberry Pi 4 with Arduino Mega integration',
                     'Live video streaming to mobile/web interface',
-                    'Battery management and power optimization'
+                    'Battery management and power optimization',
+                    'Computer vision-based decision making'
                 ],
-                technologies: ['Python', 'OpenCV', 'TensorFlow', 'Raspberry Pi', 'Arduino', 'Machine Learning', 'IoT Protocols'],
+                technologies: ['Python', 'OpenCV', 'TensorFlow', 'Raspberry Pi', 'Arduino', 'Machine Learning', 'IoT Protocols', 'Computer Vision'],
                 images: [
                     'robotcar.jpeg',
-                    'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=70'
+                    'Roboscout_1.jpeg',
+                    'Roboscout_2.jpeg',
+                    'Roboscout_3.jpeg',
+                    'Roboscout_4.jpeg'
                 ],
                 links: [
-                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/roboscout' },
-                    { label: 'Project Report (PDF)', icon: 'fas fa-file-pdf', url: 'roboscout_report.pdf' },
-                    { label: 'Demo Video', icon: 'fas fa-video', url: 'https://youtube.com/roboscout-demo' },
-                    { label: 'IEEE Paper', icon: 'fas fa-graduation-cap', url: 'roboscout_ieee.pdf' },
-                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'roboscout_circuit.pdf' }
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://lnkd.in/gEJ33mtC', type: 'external' },
+                    { label: 'Project Report (PDF)', icon: 'fas fa-file-pdf', url: 'MP_IEEE_Report.pdf', type: 'pdf' },
+                    { label: 'Demo Video', icon: 'fas fa-video', url: 'https://www.linkedin.com/posts/syed-sifat-mahmud-5498852a5_visiondrive-autonomousrobotics-embeddedsystems-activity-7420708128838541312-V6le?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEmiXMkB5pElSYVqxv17Jgp7rOHNO0N6b0c', type: 'video' },
+                    { label: 'IEEE Paper', icon: 'fas fa-graduation-cap', url: 'roboscout_ieee.pdf', type: 'pdf' },
+                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'roboscout_circuit.pdf', type: 'pdf' }
                 ]
             },
             
-            // Projects - Wireless Power
+            // Projects - Wireless Power (UPDATED with direct report and circuit links)
             'wireless-power': {
                 title: 'Wireless Power Transmission Using Inductive Coupling',
-                description: 'Designed and implemented a coil-based wireless power transmission system for low-power applications. Analyzed system efficiency, transmission distance, and output performance.',
+                description: 'Designed and implemented a coil-based wireless power transmission system for low-power applications. Analyzed system efficiency, transmission distance, and output performance for ETE 300 course project.',
                 tags: ['Electronics', 'Power Systems', 'Innovation', 'Hardware'],
                 features: [
                     'Inductive coupling power transmission up to 15cm distance',
@@ -2506,19 +2894,19 @@ const carouselSlides = [
                     'Low-power device charging capability (5V/1A)',
                     'Circuit protection and safety features',
                     'Performance optimization with tuning capacitors',
-                    'Experimental validation with measurement data'
+                    'Experimental validation with measurement data',
+                    'ETE 300 course project completion'
                 ],
-                technologies: ['Electronics Design', 'Circuit Analysis', 'Power Electronics', 'MATLAB Simulation', 'PCB Design', 'Oscilloscope Measurement'],
+                technologies: ['Electronics Design', 'Circuit Analysis', 'Power Electronics', 'MATLAB Simulation', 'PCB Design', 'Oscilloscope Measurement', 'Inductive Coupling'],
                 images: [
                     'power.jpeg',
-                    'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-                    'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                    'circuit_300.png'
                 ],
                 links: [
-                    { label: 'Project Report', icon: 'fas fa-file-pdf', url: 'wireless_power_report.pdf' },
-                    { label: 'Circuit Design', icon: 'fas fa-project-diagram', url: 'wireless_circuit.pdf' },
-                    { label: 'MATLAB Simulations', icon: 'fas fa-calculator', url: 'wireless_simulations.zip' },
-                    { label: 'Test Results', icon: 'fas fa-chart-bar', url: 'wireless_test_results.pdf' }
+                    { label: 'Project Report (ETE 300)', icon: 'fas fa-file-pdf', url: 'ETE_300.pdf', type: 'pdf' },
+                    { label: 'Circuit Design', icon: 'fas fa-project-diagram', url: 'circuit_300.png', type: 'image' },
+                    { label: 'MATLAB Simulations', icon: 'fas fa-calculator', url: 'wireless_simulations.zip', type: 'download' },
+                    { label: 'Test Results', icon: 'fas fa-chart-bar', url: 'wireless_test_results.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2542,10 +2930,10 @@ const carouselSlides = [
                     'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=70'
                 ],
                 links: [
-                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/smart-home' },
-                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'smart_home_circuit.pdf' },
-                    { label: 'Project Documentation', icon: 'fas fa-book', url: 'smart_home_docs.pdf' },
-                    { label: 'Component List', icon: 'fas fa-list', url: 'smart_home_components.pdf' }
+                    { label: 'GitHub Repository', icon: 'fab fa-github', url: 'https://github.com/yourusername/smart-home', type: 'external' },
+                    { label: 'Circuit Diagram', icon: 'fas fa-project-diagram', url: 'smart_home_circuit.pdf', type: 'pdf' },
+                    { label: 'Project Documentation', icon: 'fas fa-book', url: 'smart_home_docs.pdf', type: 'pdf' },
+                    { label: 'Component List', icon: 'fas fa-list', url: 'smart_home_components.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2569,14 +2957,14 @@ const carouselSlides = [
                     'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                 ],
                 links: [
-                    { label: 'Network Topology File', icon: 'fas fa-network-wired', url: 'network_topology.pkt' },
-                    { label: 'Configuration Files', icon: 'fas fa-code', url: 'network_configs.zip' },
-                    { label: 'Project Report', icon: 'fas fa-file-alt', url: 'network_design_report.pdf' },
-                    { label: 'IP Addressing Scheme', icon: 'fas fa-map', url: 'ip_scheme.pdf' }
+                    { label: 'Network Topology File', icon: 'fas fa-network-wired', url: 'network_topology.pkt', type: 'download' },
+                    { label: 'Configuration Files', icon: 'fas fa-code', url: 'network_configs.zip', type: 'download' },
+                    { label: 'Project Report', icon: 'fas fa-file-alt', url: 'network_design_report.pdf', type: 'pdf' },
+                    { label: 'IP Addressing Scheme', icon: 'fas fa-map', url: 'ip_scheme.pdf', type: 'pdf' }
                 ]
             },
             
-            // ===== CERTIFICATES - ALL DETAILS ADDED =====
+            // ===== CERTIFICATES =====
             
             // Certificate - TryHackMe
             'tryhackme-cert': {
@@ -2595,9 +2983,9 @@ const carouselSlides = [
                 technologies: ['Linux', 'Networking', 'Web Security', 'Cryptography', 'Penetration Testing', 'Digital Forensics'],
                 images: ['tryhackme.jpg'],
                 links: [
-                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'tryhackme_certificate.pdf' },
-                    { label: 'TryHackMe Profile', icon: 'fas fa-user', url: 'https://tryhackme.com/p/yourprofile' },
-                    { label: 'Skill Badges', icon: 'fas fa-award', url: 'tryhackme_badges.pdf' }
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'tryhackme_certificate.pdf', type: 'pdf' },
+                    { label: 'TryHackMe Profile', icon: 'fas fa-user', url: 'https://tryhackme.com/p/yourprofile', type: 'external' },
+                    { label: 'Skill Badges', icon: 'fas fa-award', url: 'tryhackme_badges.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2617,9 +3005,9 @@ const carouselSlides = [
                 technologies: ['MATLAB', 'Simulink', 'Data Analysis', 'Numerical Methods', 'GUI Development'],
                 images: ['matlab.jpg'],
                 links: [
-                    { label: 'Certificate PDF', icon: 'fas fa-certificate', url: 'matlab_certificate.pdf' },
-                    { label: 'Course Materials', icon: 'fas fa-book', url: 'matlab_materials.zip' },
-                    { label: 'Project Files', icon: 'fas fa-file-code', url: 'matlab_projects.zip' }
+                    { label: 'Certificate PDF', icon: 'fas fa-certificate', url: 'matlab_certificate.pdf', type: 'pdf' },
+                    { label: 'Course Materials', icon: 'fas fa-book', url: 'matlab_materials.zip', type: 'download' },
+                    { label: 'Project Files', icon: 'fas fa-file-code', url: 'matlab_projects.zip', type: 'download' }
                 ]
             },
             
@@ -2639,9 +3027,9 @@ const carouselSlides = [
                 technologies: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter Notebook'],
                 images: ['data.jfif'],
                 links: [
-                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'ibm_certificate.pdf' },
-                    { label: 'Course Projects', icon: 'fas fa-project-diagram', url: 'ibm_projects.zip' },
-                    { label: 'IBM Profile', icon: 'fas fa-user-tie', url: 'https://cognitiveclass.ai/users/yourprofile' }
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'ibm_certificate.pdf', type: 'pdf' },
+                    { label: 'Course Projects', icon: 'fas fa-project-diagram', url: 'ibm_projects.zip', type: 'download' },
+                    { label: 'IBM Profile', icon: 'fas fa-user-tie', url: 'https://cognitiveclass.ai/users/yourprofile', type: 'external' }
                 ]
             },
             
@@ -2661,9 +3049,9 @@ const carouselSlides = [
                 technologies: ['MATLAB', 'Programming Basics', 'Data Visualization', 'Scripting'],
                 images: ['onramp.jpg'],
                 links: [
-                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'matlab_onramp_certificate.pdf' },
-                    { label: 'Course Exercises', icon: 'fas fa-code', url: 'matlab_exercises.zip' },
-                    { label: 'MathWorks Profile', icon: 'fas fa-graduation-cap', url: 'https://matlabacademy.mathworks.com' }
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'matlab_onramp_certificate.pdf', type: 'pdf' },
+                    { label: 'Course Exercises', icon: 'fas fa-code', url: 'matlab_exercises.zip', type: 'download' },
+                    { label: 'MathWorks Profile', icon: 'fas fa-graduation-cap', url: 'https://matlabacademy.mathworks.com', type: 'external' }
                 ]
             },
             
@@ -2683,9 +3071,9 @@ const carouselSlides = [
                 technologies: ['HTML5', 'CSS3', 'Responsive Design', 'UI/UX', 'SEO', 'Web Hosting'],
                 images: ['alison.jfif'],
                 links: [
-                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'alison_certificate.pdf' },
-                    { label: 'Course Materials', icon: 'fas fa-book', url: 'alison_materials.pdf' },
-                    { label: 'Alison Profile', icon: 'fas fa-user-graduate', url: 'https://alison.com/users/yourprofile' }
+                    { label: 'View Certificate', icon: 'fas fa-certificate', url: 'alison_certificate.pdf', type: 'pdf' },
+                    { label: 'Course Materials', icon: 'fas fa-book', url: 'alison_materials.pdf', type: 'pdf' },
+                    { label: 'Alison Profile', icon: 'fas fa-user-graduate', url: 'https://alison.com/users/yourprofile', type: 'external' }
                 ]
             },
             
@@ -2705,9 +3093,9 @@ const carouselSlides = [
                 technologies: ['Network Security', 'Cybersecurity Fundamentals', 'Cisco Technologies', 'Security Protocols'],
                 images: ['cyber.jfif'],
                 links: [
-                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf' },
-                    { label: 'Cisco Profile', icon: 'fas fa-network-wired', url: 'https://www.netacad.com/yourprofile' },
-                    { label: 'Skill Metrics', icon: 'fas fa-chart-pie', url: 'cisco_skills.pdf' }
+                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf', type: 'pdf' },
+                    { label: 'Cisco Profile', icon: 'fas fa-network-wired', url: 'https://www.netacad.com/yourprofile', type: 'external' },
+                    { label: 'Skill Metrics', icon: 'fas fa-chart-pie', url: 'cisco_skills.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2727,13 +3115,13 @@ const carouselSlides = [
                 technologies: ['Networking Fundamentals', 'IP Addressing', 'Routing Basics', 'Cisco IOS'],
                 images: ['network.png'],
                 links: [
-                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf' },
-                    { label: 'Lab Exercises', icon: 'fas fa-laptop-code', url: 'cisco_labs.zip' },
-                    { label: 'Cisco Profile', icon: 'fas fa-user-tie', url: 'https://www.netacad.com/yourprofile' }
+                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf', type: 'pdf' },
+                    { label: 'Lab Exercises', icon: 'fas fa-laptop-code', url: 'cisco_labs.zip', type: 'download' },
+                    { label: 'Cisco Profile', icon: 'fas fa-user-tie', url: 'https://www.netacad.com/yourprofile', type: 'external' }
                 ]
             },
             
-            // ===== ACHIEVEMENTS - ALL DETAILS ADDED =====
+            // ===== ACHIEVEMENTS =====
             
             // Achievement - Project Show Award
             'project-show-award': {
@@ -2755,10 +3143,10 @@ const carouselSlides = [
                     'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
                 ],
                 links: [
-                    { label: 'Award Certificate', icon: 'fas fa-award', url: 'project_show_award.pdf' },
-                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'safety_system_docs.pdf' },
-                    { label: 'Judges Feedback', icon: 'fas fa-comments', url: 'judges_feedback.pdf' },
-                    { label: 'Competition Details', icon: 'fas fa-trophy', url: 'competition_info.pdf' }
+                    { label: 'Award Certificate', icon: 'fas fa-award', url: 'project_show_award.pdf', type: 'pdf' },
+                    { label: 'Project Documentation', icon: 'fas fa-file-pdf', url: 'safety_system_docs.pdf', type: 'pdf' },
+                    { label: 'Judges Feedback', icon: 'fas fa-comments', url: 'judges_feedback.pdf', type: 'pdf' },
+                    { label: 'Competition Details', icon: 'fas fa-trophy', url: 'competition_info.pdf', type: 'pdf' }
                 ]
             },
             
@@ -2778,9 +3166,9 @@ const carouselSlides = [
                 technologies: ['Cybersecurity', 'Network Security', 'Security Protocols', 'Cisco Technologies'],
                 images: ['cyber.jfif'],
                 links: [
-                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf' },
-                    { label: 'Skill Assessment', icon: 'fas fa-chart-line', url: 'security_skills_assessment.pdf' },
-                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id' }
+                    { label: 'View Badge', icon: 'fas fa-shield-alt', url: 'cisco_security_badge.pdf', type: 'pdf' },
+                    { label: 'Skill Assessment', icon: 'fas fa-chart-line', url: 'security_skills_assessment.pdf', type: 'pdf' },
+                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id', type: 'external' }
                 ]
             },
             
@@ -2800,124 +3188,130 @@ const carouselSlides = [
                 technologies: ['Networking Fundamentals', 'IP Addressing', 'Cisco IOS', 'Network Protocols'],
                 images: ['network.png'],
                 links: [
-                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf' },
-                    { label: 'Lab Completion Certificate', icon: 'fas fa-laptop-code', url: 'lab_completion.pdf' },
-                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id' }
+                    { label: 'View Badge', icon: 'fas fa-network-wired', url: 'cisco_networking_badge.pdf', type: 'pdf' },
+                    { label: 'Lab Completion Certificate', icon: 'fas fa-laptop-code', url: 'lab_completion.pdf', type: 'pdf' },
+                    { label: 'Cisco Verification', icon: 'fas fa-check-circle', url: 'https://www.credly.com/badges/your-badge-id', type: 'external' }
                 ]
             }
         };
 
-        // ===== Carousel/Slider Functionality - Faster & Smaller =====
-        class Carousel {
-            constructor() {
-                this.slider = document.querySelector('.carousel-slider');
-                this.slides = document.querySelectorAll('.carousel-slide');
-                this.dots = document.querySelectorAll('.carousel-dot');
-                this.prevBtn = document.querySelector('.carousel-prev');
-                this.nextBtn = document.querySelector('.carousel-next');
-                this.currentIndex = 0;
-                this.interval = 3000; // FASTER: Changed from 5000ms to 3000ms (3 seconds)
-                
-                this.init();
-            }
+        // ===== NEW: Global Variables for Viewers =====
+        let currentPdfUrl = '';
+        let currentImageUrl = '';
+        let currentVideoUrl = '';
+        let currentVideoTitle = '';
+
+        // ===== NEW: PDF Viewer Functions =====
+        function openPdfViewer(url, title) {
+            currentPdfUrl = url;
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfFrame = document.getElementById('pdfFrame');
+            const pdfTitle = document.getElementById('pdfTitle');
+            const pdfFallback = document.getElementById('pdfFallback');
+            const pdfDownloadLink = document.getElementById('pdfDownloadLink');
             
-            init() {
-                // Event listeners
-                this.prevBtn.addEventListener('click', () => this.prevSlide());
-                this.nextBtn.addEventListener('click', () => this.nextSlide());
-                
-                // Dot click events
-                this.dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => this.goToSlide(index));
-                });
-                
-                // Auto-slide - FASTER
-                this.startAutoSlide();
-                
-                // Pause on hover
-                this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
-                this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
-                
-                // Touch/swipe support
-                this.setupTouchEvents();
-            }
+            pdfTitle.textContent = title || 'Project Report';
+            pdfFrame.src = url;
+            pdfDownloadLink.href = url;
             
-            setupTouchEvents() {
-                let startX = 0;
-                let endX = 0;
-                
-                this.slider.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                });
-                
-                this.slider.addEventListener('touchend', (e) => {
-                    endX = e.changedTouches[0].clientX;
-                    this.handleSwipe(startX, endX);
-                });
-            }
-            
-            handleSwipe(startX, endX) {
-                const threshold = 50;
-                const diff = startX - endX;
-                
-                if (Math.abs(diff) > threshold) {
-                    if (diff > 0) {
-                        this.nextSlide(); // Swipe left
+            // Check if PDF can be displayed
+            setTimeout(() => {
+                try {
+                    const frameDoc = pdfFrame.contentDocument || pdfFrame.contentWindow.document;
+                    if (!frameDoc || frameDoc.body.innerHTML === '') {
+                        pdfFrame.style.display = 'none';
+                        pdfFallback.style.display = 'flex';
                     } else {
-                        this.prevSlide(); // Swipe right
+                        pdfFrame.style.display = 'block';
+                        pdfFallback.style.display = 'none';
                     }
+                } catch (e) {
+                    pdfFrame.style.display = 'none';
+                    pdfFallback.style.display = 'flex';
                 }
-            }
+            }, 500);
             
-            updateSlider() {
-                this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-                
-                // Update active states
-                this.slides.forEach((slide, index) => {
-                    slide.classList.toggle('active', index === this.currentIndex);
-                });
-                
-                this.dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentIndex);
-                });
-            }
-            
-            nextSlide() {
-                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-                this.updateSlider();
-            }
-            
-            prevSlide() {
-                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
-                this.updateSlider();
-            }
-            
-            goToSlide(index) {
-                this.currentIndex = index;
-                this.updateSlider();
-            }
-            
-            startAutoSlide() {
-                this.stopAutoSlide();
-                this.autoSlideInterval = setInterval(() => this.nextSlide(), this.interval);
-            }
-            
-            stopAutoSlide() {
-                if (this.autoSlideInterval) {
-                    clearInterval(this.autoSlideInterval);
-                }
+            pdfViewer.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePdfViewer() {
+            document.getElementById('pdfViewer').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function downloadPdf() {
+            const link = document.createElement('a');
+            link.href = currentPdfUrl;
+            link.download = currentPdfUrl.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function printPdf() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            if (pdfFrame.contentWindow) {
+                pdfFrame.contentWindow.print();
             }
         }
 
-        // ===== Enhanced Modal Functions =====
+        // ===== NEW: Image Viewer Functions =====
+        function openImageViewer(url, title) {
+            currentImageUrl = url;
+            const imageViewer = document.getElementById('imageViewer');
+            const fullSizeImage = document.getElementById('fullSizeImage');
+            const imageTitle = document.getElementById('imageViewerTitle');
+            
+            fullSizeImage.src = url;
+            imageTitle.textContent = title || 'Circuit Design';
+            
+            imageViewer.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageViewer() {
+            document.getElementById('imageViewer').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.href = currentImageUrl;
+            link.download = currentImageUrl.split('/').pop();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // ===== NEW: Video Modal Functions =====
+        function openVideoModal(url, title, description) {
+            currentVideoUrl = url;
+            currentVideoTitle = title;
+            
+            const videoModal = document.getElementById('videoModal');
+            const videoDescription = document.getElementById('videoDescription');
+            const directVideoLink = document.getElementById('directVideoLink');
+            
+            videoDescription.textContent = description || 'Click the button below to watch the demo video directly on LinkedIn';
+            directVideoLink.href = url;
+            
+            videoModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            document.getElementById('videoModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // ===== UPDATED: Enhanced Modal Functions =====
         let currentModalData = null;
         let currentTab = 'overview';
 
         function openModal(id) {
             const data = modalData[id];
             if (!data) {
-                console.error('No data found for:', id);
-                // Show a professional message instead of alert
                 showErrorMessage(id);
                 return;
             }
@@ -2989,15 +3383,52 @@ const carouselSlides = [
                 });
             }
             
-            // Set links
+            // Set links with special handling for different types
             modalLinks.innerHTML = '';
             if (data.links) {
                 data.links.forEach(link => {
                     const a = document.createElement('a');
-                    a.href = link.url;
+                    a.href = '#';
                     a.className = 'modal-link';
-                    a.target = '_blank';
-                    a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                    
+                    // Set different click handlers based on link type
+                    switch(link.type) {
+                        case 'pdf':
+                            a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                            a.onclick = (e) => {
+                                e.preventDefault();
+                                openPdfViewer(link.url, link.label);
+                            };
+                            break;
+                            
+                        case 'image':
+                            a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                            a.onclick = (e) => {
+                                e.preventDefault();
+                                openImageViewer(link.url, link.label);
+                            };
+                            break;
+                            
+                        case 'video':
+                            a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                            a.onclick = (e) => {
+                                e.preventDefault();
+                                openVideoModal(link.url, data.title, 'Watch the demo video for this project');
+                            };
+                            break;
+                            
+                        case 'download':
+                            a.href = link.url;
+                            a.download = link.url.split('/').pop();
+                            a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                            break;
+                            
+                        default: // external links
+                            a.href = link.url;
+                            a.target = '_blank';
+                            a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                    }
+                    
                     modalLinks.appendChild(a);
                 });
             }
@@ -3034,7 +3465,6 @@ const carouselSlides = [
         }
 
         function showErrorMessage(id) {
-            // Create a fallback modal with the item ID
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
@@ -3047,17 +3477,11 @@ const carouselSlides = [
             const modalTags = document.getElementById('modalTags');
             const galleryContainer = document.getElementById('galleryContainer');
             
-            // Set basic content
             modalTitle.textContent = id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
             modalDescription.textContent = 'Detailed information for this item is being prepared. Please check back soon or contact me for more information.';
             
-            // Hide image
             modalImage.style.display = 'none';
-            
-            // Set default tags
             modalTags.innerHTML = '<span class="image-tag">Coming Soon</span><span class="image-tag">In Progress</span>';
-            
-            // Clear other sections
             modalTech.innerHTML = '';
             modalFeatures.innerHTML = '<li>Details are being prepared</li><li>Check back soon for updates</li>';
             modalTechnologies.innerHTML = '<li>Information pending</li>';
@@ -3065,10 +3489,7 @@ const carouselSlides = [
             modalGallery.innerHTML = '';
             galleryContainer.style.display = 'none';
             
-            // Reset to overview tab
             switchTab('overview');
-            
-            // Show modal
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
@@ -3100,12 +3521,10 @@ const carouselSlides = [
         function switchTab(tabName) {
             currentTab = tabName;
             
-            // Update tab buttons
             document.querySelectorAll('.modal-tab').forEach(tab => {
                 tab.classList.toggle('active', tab.textContent.toLowerCase().includes(tabName));
             });
             
-            // Update tab content
             document.querySelectorAll('.modal-tab-content').forEach(content => {
                 content.classList.toggle('active', content.id === tabName + 'Tab');
             });
@@ -3115,22 +3534,108 @@ const carouselSlides = [
             const modal = document.getElementById('imageModal');
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
-            
-            // Remove keyboard listener
             document.removeEventListener('keydown', handleModalKeyboard);
         }
 
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target === modal) {
-                closeModal();
+        // ===== Carousel/Slider Functionality =====
+        class Carousel {
+            constructor() {
+                this.slider = document.querySelector('.carousel-slider');
+                this.slides = document.querySelectorAll('.carousel-slide');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.prevBtn = document.querySelector('.carousel-prev');
+                this.nextBtn = document.querySelector('.carousel-next');
+                this.currentIndex = 0;
+                this.interval = 3000;
+                
+                this.init();
+            }
+            
+            init() {
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                this.startAutoSlide();
+                
+                this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
+                this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
+                
+                this.setupTouchEvents();
+            }
+            
+            setupTouchEvents() {
+                let startX = 0;
+                let endX = 0;
+                
+                this.slider.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.slider.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    this.handleSwipe(startX, endX);
+                });
+            }
+            
+            handleSwipe(startX, endX) {
+                const threshold = 50;
+                const diff = startX - endX;
+                
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+            
+            updateSlider() {
+                this.slider.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                
+                this.slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === this.currentIndex);
+                });
+                
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentIndex);
+                });
+            }
+            
+            nextSlide() {
+                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+                this.updateSlider();
+            }
+            
+            prevSlide() {
+                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.updateSlider();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateSlider();
+            }
+            
+            startAutoSlide() {
+                this.stopAutoSlide();
+                this.autoSlideInterval = setInterval(() => this.nextSlide(), this.interval);
+            }
+            
+            stopAutoSlide() {
+                if (this.autoSlideInterval) {
+                    clearInterval(this.autoSlideInterval);
+                }
             }
         }
 
         // ===== Initialize Everything =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize carousel (FASTER & SMALLER)
+            // Initialize carousel
             if (document.querySelector('.carousel-container')) {
                 new Carousel();
             }
@@ -3169,25 +3674,21 @@ const carouselSlides = [
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Remove active class from all links
                         navLinks.forEach(link => {
                             link.classList.remove('active');
                         });
                         
-                        // Add active class to corresponding link
                         const id = entry.target.getAttribute('id');
                         const correspondingLink = document.querySelector(`.nav-links a[href="#${id}"]`);
                         if (correspondingLink) {
                             correspondingLink.classList.add('active');
                         }
                         
-                        // Add animation to section
                         entry.target.classList.add('animate-section');
                     }
                 });
             }, observerOptions);
             
-            // Observe all sections
             sections.forEach(section => {
                 observer.observe(section);
             });
@@ -3202,38 +3703,40 @@ const carouselSlides = [
                     
                     if (!targetSection) return;
                     
-                    // Remove active class from all links
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                     });
                     
-                    // Add active class to clicked link
                     this.classList.add('active');
                     
-                    // Scroll to target section
                     window.scrollTo({
                         top: targetSection.offsetTop - 20,
                         behavior: 'smooth'
                     });
                 });
             });
+            
+            // Close modals when clicking outside
+            window.onclick = function(event) {
+                const imageModal = document.getElementById('imageModal');
+                const videoModal = document.getElementById('videoModal');
+                const pdfViewer = document.getElementById('pdfViewer');
+                const imageViewer = document.getElementById('imageViewer');
+                
+                if (event.target === imageModal) {
+                    closeModal();
+                }
+                if (event.target === videoModal) {
+                    closeVideoModal();
+                }
+                if (event.target === pdfViewer) {
+                    closePdfViewer();
+                }
+                if (event.target === imageViewer) {
+                    closeImageViewer();
+                }
+            };
         });
-
-        // ===== ADD MORE ITEMS HERE IF NEEDED =====
-        // To add more items, use this format:
-        /*
-        modalData['new-item-id'] = {
-            title: 'Title Here',
-            description: 'Description here',
-            tags: ['Tag1', 'Tag2'],
-            features: ['Feature 1', 'Feature 2'],
-            technologies: ['Tech1', 'Tech2'],
-            images: ['image1.jpg'],
-            links: [
-                { label: 'Link 1', icon: 'fas fa-icon', url: 'link.pdf' }
-            ]
-        };
-        */
     </script>
 </body>
 </html>
